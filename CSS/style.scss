@@ -1,0 +1,63 @@
+// Import mixins and variables files
+@import "variables";
+@import "mixins";
+
+//Delete default settings
+*{
+    margin: $zero;
+    padding: $zero;
+    box-sizing: border-box;
+}
+
+//Container style
+#container{
+    @include size(100%, 100vh);
+    background: url(IMG/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flexCenter();
+    #main{
+        @include size(700px, 700px);
+        border: 4px dashed $orange;
+        border-radius: 50px;
+        @include flDownEvenly();
+        #inputPlace{
+            @include size(100%, 70px);
+            @include flexEvenly();
+            input{
+                @include size(28%, 60px);
+                border: 2px solid $orange;
+                outline: none;
+                background-color: $white;
+                font-size: 24px;
+                font-weight: bold;
+                color: $choco;
+                text-shadow: 2px 0 0 $brown;
+                text-align: center;
+            }
+        }
+        button{
+            @include size(200px, 50px);
+            border: 2px solid $brown;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: $white;
+            background-color:$orange ;
+            cursor: pointer;
+            transition: all .5s ease;
+            &:hover{
+                color: $brown;
+                background-color: $white;
+                border-color: $choco;
+            }
+        }
+        p{
+            font-size: 60px;
+            font-weight: bold;
+            color: $orange;
+            text-shadow: 2px 0 0 $brown;
+        }
+    }
+}
